@@ -72,7 +72,7 @@ hblob = vision.BlobAnalysis(...
 % Use morphological Dilation and Opening to remove small region and make
 % connected region for Blob analysis
 SE1 = strel('disk', 5, 0);
-SE2 = strel('disk', 25, 0);
+SE2 = strel('disk', 21, 0);
 segmentedObjects = imdilate(imopen((diff_img > 40),SE1),SE2);
 % Estimate the area and bounding box of the blobs.
 [~, bbox] = step(hblob, segmentedObjects);
